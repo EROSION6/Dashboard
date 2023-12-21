@@ -1,0 +1,57 @@
+.cardFriends {
+	width: 23rem;
+	height: 140px;
+	background-color: rgba(201, 198, 198, 0.18);
+	border-radius: 16px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.imgFriends {
+		display: flex;
+		gap: 0 10px;
+		justify-content: center;
+		img {
+			width: 70px;
+			height: 70px;
+			border-radius: 16px;
+			object-fit: cover;
+			cursor: pointer;
+		}
+	}
+	@media (max-width: 768px) {
+		width: 100%;
+		.imgFriends {
+			img {
+				width: 17vw;
+				height: 84px;
+				border-radius: 16px;
+				object-fit: cover;
+				cursor: pointer;
+			}
+		}
+	}
+	@media (max-width: 425px) {
+		width: 70vw;
+		.imgFriends {
+			img {
+				width: 13.5vw;
+				height: 84px;
+				border-radius: 16px;
+				object-fit: cover;
+				cursor: pointer;
+			}
+		}
+	}
+	@media (max-width: 320px) {
+		width: 65vw;
+		height: 115px;
+		transition: all 0.3s;
+		.imgFriends {
+			img {
+				width: 9.5vw;
+				height: 60px;
+			}
+		}
+	}
+}

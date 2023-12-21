@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	height: 100%;
+	font-family: 'Roboto', sans-serif;
+	background-size: 300% 300%;
+	background-size: 300% 300%;
+	background-image: linear-gradient(-45deg, #171a21 0%, #305368 40%, #1b2838 60%, #182e41 100%);
+	animation: AnimateBG 20s ease infinite;
+
+	@keyframes AnimateBG {
+		0% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+		100% {
+			background-position: 0% 50%;
+		}
+	}
+}
+
+.content {
+	display: flex;
+}

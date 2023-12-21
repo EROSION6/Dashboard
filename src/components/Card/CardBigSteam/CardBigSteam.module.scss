@@ -1,0 +1,68 @@
+.cardBigSteam {
+	width: 26.2vw;
+	height: 250px;
+	cursor: pointer;
+	position: relative;
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 16px;
+	}
+
+	.rating_card {
+		position: absolute;
+		display: flex;
+		gap: 0 10px;
+		margin: 10px;
+		top: 0;
+		span {
+			display: flex;
+			align-items: center;
+			padding: 5px 8px;
+			width: 70px;
+			border-radius: 16px;
+			&:first-child {
+				background-color: #3d3fcd;
+			}
+			&:last-child {
+				background-color: #eac73e;
+			}
+			b {
+				font-size: 12px;
+				color: #fff;
+			}
+			svg {
+				margin-right: 5px;
+				color: #fff;
+			}
+		}
+	}
+	button {
+		display: flex;
+		align-items: center;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		margin: 10px;
+		svg {
+			margin-right: 5px;
+			width: 17px;
+			height: 17px;
+		}
+	}
+	.video {
+		height: 250px;
+	}
+
+	@media (max-width: 980px) {
+		width: 82.5vw;
+	}
+
+	@media (max-width: 560px) {
+		width: 66vw;
+		.rating_card {
+			display: none !important;
+		}
+	}
+}

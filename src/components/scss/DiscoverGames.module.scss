@@ -1,0 +1,31 @@
+.discoverGames {
+	margin: 26px 20px;
+	width: 100%;
+	height: 100vh;
+	main {
+		width: 100%;
+		h1 {
+			color: #fff;
+			font-size: 26px;
+			letter-spacing: 1px;
+			margin: 20px 0 10px 0;
+			@media (max-width: 768px) {
+				font-size: 16px;
+				transition: all 0.3s;
+			}
+		}
+		.cardSmallGamesApi,
+		.cardBigGamesApi {
+			display: flex;
+			gap: 25px;
+			flex-wrap: wrap;
+		}
+	}
+	@media (max-width: 1024px) {
+		main {
+			.cardBigGamesApi {
+				flex-direction: column;
+			}
+		}
+	}
+}

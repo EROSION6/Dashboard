@@ -1,0 +1,23 @@
+form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 20px 0;
+	input {
+		padding: 10px 15px;
+		width: 25vw;
+		border: none;
+		outline: none;
+		color: #5b616b;
+		font-size: 14px;
+		&::placeholder {
+			color: #5b616b;
+			font-size: 14px;
+		}
+	}
+	button {
+		border: none;
+		color: #fff;
+		margin: 20px 0;
+	}
+}

@@ -1,0 +1,15 @@
+.myButton {
+	padding: 14px 16px;
+	border-radius: 16px;
+	background: rgba(0, 0, 0, 0.4);
+	color: #fff;
+	border: none;
+	cursor: pointer;
+
+	@media (max-width: 768px) {
+		padding: 10px 14px;
+	}
+	@media (max-width: 440px) {
+		padding: 10px 5px;
+	}
+}

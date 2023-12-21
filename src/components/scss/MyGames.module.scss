@@ -1,0 +1,39 @@
+.myGames {
+	margin: 26px 20px;
+	width: 100%;
+	.text {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		flex-direction: column;
+		gap: 20px 0;
+		h1 {
+			color: #fff;
+			font-size: 44px;
+		}
+		button {
+			padding: 14px;
+			width: 200px;
+			border-radius: 6rem;
+			background-color: #2a6bc7;
+			font-size: 18px;
+		}
+	}
+	@media (max-width: 768px) {
+		.text {
+			h1 {
+				font-size: 28px;
+				transition: all 0.3s;
+			}
+		}
+	}
+	@media (max-width: 425px) {
+		.text {
+			h1 {
+				font-size: 18px;
+				transition: all 0.3s;
+			}
+		}
+	}
+}

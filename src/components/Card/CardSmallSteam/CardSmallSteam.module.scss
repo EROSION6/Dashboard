@@ -1,0 +1,43 @@
+.cardSmallSteam {
+	width: 10.5rem;
+	height: 250px;
+	cursor: pointer;
+	position: relative;
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 16px;
+	}
+	button {
+		display: flex;
+		align-items: center;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		margin: 10px;
+		svg {
+			margin-right: 5px;
+			width: 17px;
+			height: 17px;
+		}
+	}
+	.video {
+		height: 250px;
+		object-fit: cover;
+	}
+	@media (max-width: 980px) {
+		width: 33rem;
+		height: 250px;
+	}
+	@media (max-width: 768px) {
+		width: 8.5rem;
+		height: 200px;
+	}
+	@media (max-width: 560px) {
+		width: 7.5rem;
+		.video {
+			height: 200px;
+		}
+	}
+}

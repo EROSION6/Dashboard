@@ -1,0 +1,14 @@
+.rh5v-DefaultPlayer_video {
+	width: 100%;
+	object-fit: none;
+	border-radius: 16px;
+}
+
+.rh5v-DefaultPlayer_component {
+	border-radius: 16px;
+	height: 26.3rem;
+}
+
+.rh5v-DefaultPlayer_controls {
+	display: none;
+}
