@@ -1,68 +1,31 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import style from '../scss/SideBar.module.scss';
-import { FaGamepad, FaSteam } from 'react-icons/fa';
-import { GoHome } from 'react-icons/go';
-import { BiBook } from 'react-icons/bi';
-import { PiFinnTheHumanFill } from 'react-icons/pi';
-import { TiMessages } from 'react-icons/ti';
+import { FaSteam } from 'react-icons/fa';
+import { RxHamburgerMenu, RxCross2 } from 'react-icons/rx';
 import { Link } from 'react-router-dom';
+import { Navigation } from './navigation';
 
 export default function SideBar() {
-	const [active, setActive] = useState(0);
-
-	const handlerActiveList = i => {
-		setActive(i);
-	};
-
-	const menuItem = [
-		{
-			name: 'Home',
-			path: '/',
-			icon: <GoHome />,
-		},
-		{
-			name: 'Categories',
-			path: 'DiscoverGames',
-			icon: <BiBook />,
-		},
-		{
-			name: 'My Games',
-			path: 'MyGames',
-			icon: <TiMessages />,
-		},
-		{
-			name: 'Profile',
-			path: '/Setting',
-			icon: <PiFinnTheHumanFill />,
-		},
-	];
+	const [menuBar, setMenuBar] = useState(false);
 
 	return (
-		<aside className={style.container}>
-			<Link to='/'>
-				<div className={style.logo}>
-					<span>
-						<FaSteam />
-					</span>
-					<h1>Steam</h1>
-				</div>
-			</Link>
-			<div className={style.listStyle}>
-				<nav>
-					<ul>
-						{menuItem.map((item, i) => (
-							<Link key={i} to={item.path}>
-								<li
-									style={{ color: active === i ? '#fff' : '#5B616B' }}
-									onClick={() => handlerActiveList(i)}>
-									<span>{item.icon}</span>
-									<a href='#'>{item.name}</a>
-								</li>
-							</Link>
-						))}
-					</ul>
-				</nav>
+		<>
+			<aside
+				className={`${style.container} ${menuBar ? style.slide_in : ''}`}
+				style={menuBar ? { width: 'auto', display: 'block' } : { width: 0, display: 'none' }}>
+				<Link to='/'>
+					<div className={style.logo}>
+						<span>
+							<FaSteam />
+						</span>
+						<h1>Steam</h1>
+					</div>
+				</Link>
+				<Navigation />
+			</aside>
+			<div onClick={() => setMenuBar(!menuBar)} className={style.burger__menu}>
+				{!menuBar ? <RxHamburgerMenu /> : <RxCross2 />}
 			</div>
-		</aside>
+		</>
 	);
 }

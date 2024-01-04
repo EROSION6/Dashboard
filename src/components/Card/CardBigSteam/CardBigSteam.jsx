@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { DefaultPlayer as Video } from 'react-html5video';
-import style from './CardBigSteam.module.scss';
+import styles from './CardBigSteam.module.scss';
 import { IoTimeOutline } from 'react-icons/io5';
 import { TfiCup } from 'react-icons/tfi';
 import { CiPlay1 } from 'react-icons/ci';
 import MyButton from '../../UI/MyButton/MyButton';
 
-export default function CardBigSteam({item}) {
+export default function CardBigSteam({ item, style }) {
 	const [showVideoCard, setShowVideoCard] = useState(false);
 
 	const cardCategory = [
@@ -21,26 +21,15 @@ export default function CardBigSteam({item}) {
 	];
 
 	return (
-		<div className={style.cardBigSteam}>
+		<div style={style} className={styles.cardBigSteam}>
 			{!showVideoCard ? (
-				<img
-					src={item.ImageUrl}
-					alt='poster'
-				/>
+				<img src={item.ImageUrl} alt='poster' />
 			) : (
-				<Video
-					autoPlay
-					loop
-					muted
-					className={style.video}
-					poster={item.ImageUrl}>
-					<source
-						src={item.video}
-						type='video/mp4'
-					/>
+				<Video autoPlay loop muted className={styles.video} poster={item.ImageUrl}>
+					<source src={item.video} type='video/mp4' />
 				</Video>
 			)}
-			<div style={{ display: showVideoCard ? 'none' : 'flex' }} className={style.rating_card}>
+			<div style={{ display: showVideoCard ? 'none' : 'flex' }} className={styles.rating_card}>
 				{cardCategory.map((cat, i) => (
 					<span key={i}>
 						{cat.icon}

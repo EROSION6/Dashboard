@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import { useState } from 'react';
 import Header from '../components/Main/Header';
 import style from '../components/scss/Setting.module.scss';
 import MyButton from '../components/UI/MyButton/MyButton';
@@ -6,12 +6,23 @@ import { PiPencilLineDuotone } from 'react-icons/pi';
 import Profile from '../components/Profile/Profile';
 import Module from '../components/UI/Modul/Modul';
 import Form from '../components/Profile/Form';
-import { Context } from '../components/Context';
+import { useAuth } from '../components/Auth/Auth';
+import { IoPlayBackOutline } from 'react-icons/io5';
+import { useNavigate } from 'react-router-dom';
 
 export default function Setting() {
 	const [modalActive, setModalActive] = useState(false);
+	const [file, setFile] = useState(null);
 	const [value, setValue] = useState({ valueName: '', valueCountry: '', valueComment: '' });
 	const [savedValue, setSavedValue] = useState({ name: '', country: '', comment: '' });
+
+	const auth = useAuth();
+	const navigate = useNavigate();
+
+	const handleLogout = () => {
+		auth.logout();
+		navigate('/login');
+	};
 
 	const handleRemoveModal = () => {
 		if (value.valueName === '') {
@@ -21,10 +32,9 @@ export default function Setting() {
 		}
 	};
 
-	const { file, setFile } = useContext(Context);
 	return (
 		<div className={style.setting}>
-			<Header />
+			<Header file={file} />
 			<section className={style.block_setting}>
 				<div className={style.left}>
 					{!file ? (
@@ -33,7 +43,7 @@ export default function Setting() {
 						<img src={file} alt='avatar' />
 					)}
 					<div className={style.content_text}>
-						{value.valueName ? <h2>{savedValue.name}</h2> : <h2>Anon</h2>}
+						{value.valueName ? <h2>{savedValue.name}</h2> : <h2>{auth.user}</h2>}
 						{value.valueCountry ? <b>{savedValue.country}</b> : <b>Tashkent, Uzbekistan</b>}
 						{value.valueComment ? (
 							<p>{savedValue.comment}</p>
@@ -62,6 +72,10 @@ export default function Setting() {
 							setFile={setFile}
 						/>
 					</Module>
+					<MyButton onClick={handleLogout}>
+						<IoPlayBackOutline />
+						Logout
+					</MyButton>
 				</div>
 			</section>
 			<Profile />

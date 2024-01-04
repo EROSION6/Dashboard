@@ -1,5 +1,5 @@
 .cardSmallSteam {
-	width: 10.5rem;
+	width: 9.5rem;
 	height: 250px;
 	cursor: pointer;
 	position: relative;
@@ -27,17 +27,19 @@
 		object-fit: cover;
 	}
 	@media (max-width: 980px) {
-		width: 33rem;
+		width: 12rem;
 		height: 250px;
 	}
 	@media (max-width: 768px) {
 		width: 8.5rem;
-		height: 200px;
 	}
 	@media (max-width: 560px) {
-		width: 7.5rem;
+		width: 10rem;
 		.video {
 			height: 200px;
 		}
+	}
+	@media (max-width: 320px) {
+		height: 190px;
 	}
 }

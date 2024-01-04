@@ -1,12 +1,11 @@
-import React, { useContext } from 'react';
+import { useAuth } from '../Auth/Auth';
 import style from '../scss/Main.module.scss';
 import MyInput from '../UI/Input/MyInput';
-import { BiBell } from 'react-icons/bi';
-import { Link } from 'react-router-dom';
-import { Context } from '../Context';
+import { useNavigate } from 'react-router-dom';
 
-export default function Header({ search, setSearch }) {
-	const { file } = useContext(Context);
+export default function Header({ search, setSearch, file }) {
+	const navigate = useNavigate();
+	const auth = useAuth();
 
 	return (
 		<header>
@@ -18,18 +17,19 @@ export default function Header({ search, setSearch }) {
 					placeholder='Search Games'
 				/>
 			</div>
-			<div className={style.user}>
-				<span>
-					<BiBell />
-				</span>
-				<Link to='setting'>
+			{!auth.user ? (
+				<div onClick={() => navigate('/login')} className={style.user}>
 					{!file ? (
 						<img src='/public/Images/avatar.jpg' alt='avatar' />
 					) : (
 						<img src={file} alt='avatar' />
 					)}
-				</Link>
-			</div>
+				</div>
+			) : (
+				<div className={style.user}>
+					<img src='/public/Images/avatar.jpg' alt='avatar' />
+				</div>
+			)}
 		</header>
 	);
 }

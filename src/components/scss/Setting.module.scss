@@ -48,19 +48,20 @@
 			display: flex;
 			align-items: end;
 			margin: 50px;
+			gap: 20px;
 			button {
 				display: flex;
 				align-items: center;
 				justify-content: center;
 				padding: 14px;
-				width: 200px;
+				width: 150px;
 				border-radius: 6rem;
 				background-color: #2a6bc7;
-				font-size: 18px;
+				font-size: 16px;
 				svg {
-					width: 24px;
-					height: 24px;
-					margin-right: 10px;
+					width: 20px;
+					height: 20px;
+					margin-right: 5px;
 				}
 			}
 		}
@@ -68,7 +69,8 @@
 	@media (max-width: 1024px) {
 		.block_setting {
 			.right {
-				margin: 34px 28px;
+				margin: 115px 60px;
+				flex-direction: column;
 			}
 		}
 	}
@@ -78,12 +80,20 @@
 			flex-direction: column;
 			.right {
 				margin: 24px;
+				flex-direction: row;
+				button {
+					width: 100%;
+				}
 			}
 			.left {
 				align-items: center;
+				.content_text {
+					width: 55vw;
+				}
 			}
 		}
 	}
+
 	@media (max-width: 640px) {
 		.block_setting {
 			height: 30rem;
@@ -93,7 +103,6 @@
 				transition: all 0.3s;
 				margin: 12px 25px;
 				.content_text {
-					width: 55vw;
 					text-align: center;
 					p,
 					b {
@@ -102,16 +111,19 @@
 				}
 			}
 			.right {
-				margin: 30px 48px;
+				margin: 16px 48px;
 				justify-content: center;
+				button {
+					font-size: 12px;
+				}
 			}
 		}
 	}
 	@media (max-width: 420px) {
 		.block_setting {
-			width: 70vw;
+			width: 100%;
 			.right {
-				margin: 10px 48px;
+				margin: 10px 15px;
 			}
 		}
 	}
@@ -192,9 +204,9 @@
 			}
 		}
 	}
+
 	@media (max-width: 320px) {
 		.block_setting {
-			width: 65vw;
 			height: 25rem;
 			transition: all 0.3s;
 			.left {
@@ -209,7 +221,7 @@
 				}
 			}
 			.right {
-				margin: 5px 40px;
+				margin: 5px 15px;
 				button {
 					padding: 8px;
 					font-size: 12px;

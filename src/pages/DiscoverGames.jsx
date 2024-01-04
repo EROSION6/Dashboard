@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Header from '../components/Main/Header';
 import style from '../components/scss/DiscoverGames.module.scss';
 import axios from 'axios';
@@ -42,9 +42,11 @@ export default function DiscoverGames() {
 					<section>
 						<h1>Best Selling</h1>
 						<div className={style.cardSmallGamesApi}>
-							{filteredGames.map(item => (
-								<CardSmallSteam key={item.id} item={item} />
-							))}
+							{filteredGames.length > 0 ? (
+								filteredGames.map(item => <CardSmallSteam key={item.id} item={item} />)
+							) : (
+								<h1>Ничего не найдено &#128577;</h1>
+							)}
 						</div>
 					</section>
 				</section>

@@ -1,4 +1,3 @@
-import React from 'react';
 import style from './CardFriends.module.scss';
 
 export default function CardFriends() {

@@ -6,9 +6,15 @@
 
 .rh5v-DefaultPlayer_component {
 	border-radius: 16px;
-	height: 26.3rem;
+	height: 25.3rem;
 }
 
 .rh5v-DefaultPlayer_controls {
 	display: none;
+}
+
+@media (max-width: 860px) {
+	.rh5v-DefaultPlayer_component {
+		height: 25.3rem;
+	}
 }

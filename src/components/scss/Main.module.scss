@@ -4,6 +4,7 @@
 
 	main {
 		width: 100%;
+		margin: 0 -10px;
 		section {
 			width: 100%;
 			min-width: 40vw;
@@ -17,7 +18,7 @@
 
 			.right {
 				width: 30vw;
-				height: 26.3rem;
+				height: 25.3rem;
 				min-height: 390px;
 				background: #0d1720;
 				color: #fff;
@@ -97,7 +98,7 @@
 						grid-template-columns: repeat(4, 1fr);
 						padding: 0 10px;
 						.images_block {
-							width: 14vw;
+							width: 19vw;
 							transition: all 0.3s;
 							b {
 								font-size: 12px;
@@ -113,7 +114,7 @@
 			}
 
 			.left {
-				width: 60%;
+				width: 68%;
 				transition: all 0.4s;
 				img {
 					width: 100%;
@@ -122,6 +123,7 @@
 					border-radius: 16px;
 				}
 			}
+
 			@media (max-width: 860px) {
 				flex-direction: column;
 				height: 700px;
@@ -130,19 +132,26 @@
 				.left {
 					width: 100%;
 					transition: all 0.4s;
+					height: 100%;
 				}
 				.right {
 					width: 100%;
 					height: 256px;
 					min-height: 246px;
 					transition: all 0.4s;
+					h2 {
+						font-size: 32px;
+					}
 				}
 			}
-			@media (max-width: 560px) {
-				width: 70vw;
-				height: 700px;
+		}
+		@media (max-width: 560px) {
+			margin: 0;
+			section {
+				height: 37.5rem;
 				.right {
-					height: 350px;
+					min-height: 150px;
+					height: 150px;
 					.gallery_grid {
 						display: none;
 					}
@@ -179,7 +188,6 @@ header {
 	margin-bottom: 30px;
 	.user {
 		display: flex;
-		gap: 0 20px;
 		align-items: center;
 		img {
 			width: 50px;
@@ -187,28 +195,6 @@ header {
 			object-fit: cover;
 			border-radius: 50%;
 			cursor: pointer;
-		}
-		span {
-			width: 50px;
-			height: 50px;
-			border-radius: 50%;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			background-color: rgba(201, 198, 198, 0.18);
-			cursor: pointer;
-			transition: all 0.4s;
-			svg {
-				width: 30px;
-				height: 30px;
-				color: #fff;
-				transition: all 0.4s;
-			}
-			&:hover {
-				svg {
-					transform: scale(1.1);
-				}
-			}
 		}
 	}
 

@@ -1,8 +1,14 @@
-import React, { useContext, useEffect } from 'react';
-import '../scss/Form.module.scss';
-import { Context } from '../Context';
+import style from '../scss/Form.module.scss';
+import MyButton from '../UI/MyButton/MyButton';
 
-export default function Form({ value, setValue, handleRemoveModal, savedValue, setSavedValue }) {
+export default function Form({
+	value,
+	setValue,
+	handleRemoveModal,
+	savedValue,
+	setSavedValue,
+	setFile,
+}) {
 	const handleDefault = e => {
 		e.preventDefault();
 		setSavedValue({
@@ -14,8 +20,6 @@ export default function Form({ value, setValue, handleRemoveModal, savedValue, s
 
 		handleRemoveModal();
 	};
-
-	const { setFile } = useContext(Context);
 
 	return (
 		<form>
@@ -44,7 +48,9 @@ export default function Form({ value, setValue, handleRemoveModal, savedValue, s
 					setFile(URL.createObjectURL(files[0]));
 				}}
 			/>
-			<button onClick={handleDefault}>Change</button>
+			<MyButton className={style.submit} onClick={handleDefault}>
+				Change
+			</MyButton>
 		</form>
 	);
 }

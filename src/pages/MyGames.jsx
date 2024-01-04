@@ -1,4 +1,3 @@
-import React from 'react';
 import Header from '../components/Main/Header';
 import style from '../components/scss/MyGames.module.scss';
 import MyButton from '../components/UI/MyButton/MyButton';
@@ -17,5 +16,3 @@ export default function MyGames() {
 		</div>
 	);
 }
-
-

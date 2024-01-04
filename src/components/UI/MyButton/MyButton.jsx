@@ -1,4 +1,3 @@
-import React from 'react';
 import style from './MyButton.module.scss';
 
 function MyButton({ children, className, ...props }) {

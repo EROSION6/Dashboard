@@ -41,25 +41,14 @@
 			}
 		}
 	}
-	@media (max-width: 425px) {
-		width: 70vw;
-		.card_gallery_preview {
-			img {
-				width: 13.5vw;
-				height: 84px;
-				border-radius: 16px;
-				object-fit: cover;
-				cursor: pointer;
-			}
-		}
-	}
 	@media (max-width: 320px) {
-		width: 65vw;
 		height: 115px;
 		transition: all 0.3s;
+		.cardText {
+			padding: 10px 10px;
+		}
 		.card_gallery_preview {
 			img {
-				width: 9.5vw;
 				height: 60px;
 			}
 		}

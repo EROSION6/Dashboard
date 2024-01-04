@@ -15,9 +15,29 @@ form {
 			font-size: 14px;
 		}
 	}
-	button {
+	.submit {
 		border: none;
 		color: #fff;
 		margin: 20px 0;
+	}
+	@media (max-width: 1024px) {
+		input {
+			width: auto;
+		}
+	}
+	@media (max-width: 1024px) {
+		input {
+			width: auto;
+			padding: 10px 5px;
+			font-size: 12px;
+			&::placeholder {
+				font-size: 12px;
+			}
+		}
+		.submit {
+			font-size: 14px !important;
+			padding: 10px !important;
+			margin: 0 20px !important;
+		}
 	}
 }

@@ -1,12 +1,30 @@
 .container {
-	background-color: transparent;
+	background-color: rgba(201, 198, 198, 0.18);
 	color: #fff;
-	height: 100vh;
-	width: 16vw;
+	height: 105em;
 	overflow: hidden;
-	transition: all 0.4s;
 	padding: 0 40px;
 	box-shadow: 0px 2px 7px rgba(161, 77, 77, 0.021);
+	position: absolute;
+	z-index: 999;
+	transition: all 0.3s;
+	background-size: 300% 300%;
+	background-image: linear-gradient(-45deg, #171a21 0%, #305368 40%, #1b2838 60%, #182e41 100%);
+	animation: AnimateBG 20s ease infinite;
+	border-top-right-radius: 12px;
+	border-bottom-right-radius: 12px;
+
+	@keyframes AnimateBG {
+		0% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+		100% {
+			background-position: 0% 50%;
+		}
+	}
 
 	.logo {
 		display: flex;
@@ -38,9 +56,9 @@
 				display: flex;
 				gap: 10px 0;
 				flex-direction: column;
-				li {
+				color: #5b616b;
+				.listBar {
 					display: flex;
-					color: #5b616b;
 					padding: 20px 15px;
 					gap: 15px;
 					align-items: center;
@@ -110,7 +128,7 @@
 			nav {
 				ul {
 					align-items: center;
-					li {
+					.listBar {
 						a {
 							display: none;
 						}
@@ -127,8 +145,38 @@
 		}
 	}
 }
+.burger__menu {
+	position: absolute;
+	right: 5.5%;
+	z-index: 99;
+	top: 4%;
+	color: #fff;
+	svg {
+		width: 30px;
+		height: 30px;
+	}
+	@media (max-width: 768px) {
+		margin: -1px 26px;
+	}
+	@media (max-width: 560px) {
+		margin: -1px 45px;
+	}
+}
 
 a {
 	text-decoration: none;
 	color: inherit;
+}
+
+.slide_in {
+	animation: slide-in 0.3s forwards;
+}
+
+@keyframes slide-in {
+	from {
+		transform: translateX(-100%);
+	}
+	to {
+		transform: translateX(0);
+	}
 }

@@ -1,4 +1,3 @@
-import React from 'react';
 import style from './CardPreview.module.scss';
 
 export default function CardPreview({ card }) {

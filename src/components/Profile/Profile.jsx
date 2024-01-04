@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import style from '../scss/Setting.module.scss';
 import CardPreview from '../Card/CardPreview/CardPreview';
 import CardFriends from '../Card/CardFriends/CardFriends';
 
 export default function Profile() {
-	const [blockGamesCategory, setBlockGamesCategory] = useState([
+	const blockGamesCategory = [
 		{
 			title: 'Games',
 			imgUrl: [
@@ -32,7 +32,7 @@ export default function Profile() {
 				'https://avatars.akamai.steamstatic.com/8123e1f2969850d7ee16cdc335e1cf79e7d74b3d_full.jpg',
 			],
 		},
-	]);
+	];
 
 	const [tabActive, setTabActive] = useState(0);
 
@@ -48,7 +48,7 @@ export default function Profile() {
 					<h1>You don't have any games 😓</h1>
 				</div>
 			</section>
-			<section className={style.block_text_setting}>
+			<div className={style.block_text_setting}>
 				<nav>
 					<ul>
 						<li
@@ -73,7 +73,7 @@ export default function Profile() {
 				<div style={{ display: tabActive === 1 ? 'flex' : 'none' }} className={style.tabs_2}>
 					<CardFriends />
 				</div>
-			</section>
+			</div>
 		</div>
 	);
 }

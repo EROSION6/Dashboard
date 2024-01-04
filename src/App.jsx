@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import DiscoverGames from './pages/DiscoverGames';
 import MyGames from './pages/MyGames';
@@ -6,25 +5,22 @@ import Setting from './pages/Setting';
 import SideBar from './components/SideBar/SideBar';
 import Main from './components/Main/Main';
 import style from './index.module.scss';
-import { Context } from './components/Context';
+import { AuthProvider } from './components/Auth/Auth';
+import { Login } from './pages/Login';
 
 export default function App() {
-	const [file, setFile] = useState(null);
 	return (
-		<Context.Provider
-			value={{
-				file,
-				setFile,
-			}}>
+		<AuthProvider>
 			<div className={style.content}>
 				<SideBar />
 				<Routes>
 					<Route path='/' element={<Main />} />
 					<Route path='DiscoverGames' element={<DiscoverGames />} />
 					<Route path='MyGames' element={<MyGames />} />
-					<Route path='Setting' element={<Setting />} />
+					<Route path='setting' element={<Setting />} />
+					<Route path='login' element={<Login />} />
 				</Routes>
 			</div>
-		</Context.Provider>
+		</AuthProvider>
 	);
 }

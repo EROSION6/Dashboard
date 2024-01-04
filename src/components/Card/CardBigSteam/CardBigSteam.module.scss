@@ -1,5 +1,5 @@
 .cardBigSteam {
-	width: 26.2vw;
+	width: 31.7vw;
 	height: 250px;
 	cursor: pointer;
 	position: relative;
@@ -56,11 +56,11 @@
 	}
 
 	@media (max-width: 980px) {
-		width: 82.5vw;
+		width: 100%;
 	}
 
 	@media (max-width: 560px) {
-		width: 66vw;
+		width: 100% !important;
 		.rating_card {
 			display: none !important;
 		}

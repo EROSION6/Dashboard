@@ -20,4 +20,20 @@
 		border-radius: 16px;
 		transition: all 0.4s;
 	}
+
+	@media (max-width: 1024px) {
+		.content_block {
+			width: 22rem;
+		}
+	}
+	@media (max-width: 420px) {
+		.content_block {
+			width: 20rem;
+		}
+	}
+	@media (max-width: 320px) {
+		.content_block {
+			width: 16rem;
+		}
+	}
 }
